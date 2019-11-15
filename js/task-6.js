@@ -1,14 +1,20 @@
 "use strict";
 
 const input = document.querySelector("#validation-input");
-const length = input.getAttribute("data-length");
+const dataLength = document.querySelector("#validation-input[data-length]");
 
-const onblur = function() {
-  if (input.value.length === Number(length)) {
+input.addEventListener("blur", event => {
+  if (input.value.length == input.dataset.length) {
     input.classList.add("valid");
   } else {
     input.classList.add("invalid");
   }
-};
+});
 
-input.addEventListener("blur", onblur);
+input.addEventListener("focus", event => {
+  if (input.value.length == input.dataset.length) {
+    input.classList.remove("valid");
+  } else {
+    input.classList.remove("invalid");
+  }
+});

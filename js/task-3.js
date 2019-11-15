@@ -20,7 +20,7 @@ const images = [
 
 const img = document.querySelector("#gallery");
 const element = images.map(({ url, alt }) => {
-  return `<li><img src = '${url}' alt = '${alt}'></li>`;
+  return `<li><img class="img" src = '${url}' alt = '${alt}'></li>`;
 });
 
-img.insertAdjacentHTML("afterbegin", `${element}`);
+img.insertAdjacentHTML("afterbegin", element.join("\n"));

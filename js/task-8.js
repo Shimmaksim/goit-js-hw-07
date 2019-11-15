@@ -18,12 +18,10 @@ function createBoxes(n) {
   return Array(n)
     .fill("")
     .map(
-      (e, i) => `<div style="
-                                         width: ${initSize + step * i}px; 
-                                         height: ${initSize + step * i}px; 
-                                         background-color: ${randonRGB()};
-                                       ">
-                       </div>`
+      (e, i) => `<div style="width: ${initSize + step * i}px; 
+        height: ${initSize + step * i}px; 
+        background-color: ${randonRGB()};">
+        </div>`
     )
     .join("\n");
 }
